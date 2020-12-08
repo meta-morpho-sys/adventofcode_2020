@@ -1,18 +1,37 @@
+//  Day 1
+//	Find the two entries that sum to 2020;
+//	what do you get if you multiply them together?
+
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
-var expensesInput = []int{2, 3}
+var expensesInput = []int{
+	1721,
+	979,
+	366,
+	299,
+	675,
+	1456,
+}
 
 func main() {
-	expense := ShowExpenses(expensesInput)
+	expense, err := ShowExpenses(expensesInput)
+	if err != nil {
+		fmt.Printf("ERROR: %s", err)
+		return
+	 }
+
 	fmt.Println(expense)
 }
 
-func ShowExpenses(expenses []int) (expense int) {
+func ShowExpenses(expenses []int) (expense int, err error) {
 	sum := 0
 	for _, expense := range expenses {
+		fmt.Println(expense)		
 		sum += expense
 	}
-	return sum
+	return sum, nil
 }
