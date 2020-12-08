@@ -2,19 +2,17 @@ package main
 
 import "fmt"
 
-// expenses := []int{1721
-// 	979
-// 	366
-// 	299
-// 	675
-// 	1456}
+var expensesInput = []int{2, 3}
 
 func main() {
-	expense := ShowExpenses()
+	expense := ShowExpenses(expensesInput)
 	fmt.Println(expense)
 }
 
-func ShowExpenses() (expense int) {
-	sum := int(1 + 1)
+func ShowExpenses(expenses []int) (expense int) {
+	sum := 0
+	for _, expense := range expenses {
+		sum += expense
+	}
 	return sum
 }
