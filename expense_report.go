@@ -18,20 +18,30 @@ var expensesInput = []int{
 }
 
 func main() {
-	expense, err := ShowExpenses(expensesInput)
-	if err != nil {
-		fmt.Printf("ERROR: %s", err)
-		return
-	 }
-
+	expense, _ := twoSum(expensesInput, 2020)
 	fmt.Println(expense)
 }
 
-func ShowExpenses(expenses []int) (expense int, err error) {
-	sum := 0
-	for _, expense := range expenses {
-		fmt.Println(expense)		
-		sum += expense
+// Take a list of expenses and check which two make the sum of 2020
+func twoSum(expenses []int, target int) (int, int) {
+    if len(expenses) <= 1 {
+        return -1, -1
 	}
-	return sum, nil
+	//	how to take an element and sum it with all the others?
+	//	Check if sum equals to 2020
+    m := make(map[int]int)
+    for i, v := range expenses {
+		m[i] = v
+		fmt.Println("Map has these keys: ",m[i])
+		fmt.Println(m)
+		// result := target - m[i]
+		// fmt.Println("Result is: ",result)
+
+		// if result - target == 0 {
+		// 	m[i] = result
+		// 	fmt.Println(m)
+		// }
+        
+    }
+    return -1, -1
 }
