@@ -32,15 +32,16 @@ func find2020(expenses []int) (found[]int) {
 	//	Take the n0 and sum it up with the values of indices "n" (by iterating over them?)
 	//	Then pass on the n1, and so on.
 	//	Nested loops?
-
 	for i := 0; i < len(expenses); i++ {
-		result := expenses[0] + expenses[i]
-		fmt.Println("\ni is :", expenses[0], "next i is: ", expenses[i])
-		fmt.Println("Result is: ", result)
-		found := []int{}
-		if result == 2020 {
-			found = append(found, expenses[0], expenses[i])
-			fmt.Printf("These values %v sum up to 2020",found)
+		for i := 0; i < len(expenses); i++ {
+			result := expenses[0] + expenses[i]
+			fmt.Println("\ni is :", expenses[0], "next i is: ", expenses[i])
+			fmt.Println("Result is: ", result)
+			found := []int{}
+			if result == 2020 {
+				found = append(found, expenses[0], expenses[i])
+				fmt.Printf("These values %v sum up to 2020",found)
+			}
 		}
 	}
 	return found
