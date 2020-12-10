@@ -18,30 +18,26 @@ var expensesInput = []int{
 }
 
 func main() {
-	expense, _ := twoSum(expensesInput, 2020)
+	expense, _ := find2020(expensesInput, 2020)
 	fmt.Println(expense)
 }
 
 // Take a list of expenses and check which two make the sum of 2020
-func twoSum(expenses []int, target int) (int, int) {
-    if len(expenses) <= 1 {
-        return -1, -1
+func find2020(expenses []int, target int) (int, int) {
+	if len(expenses) <= 1 {
+		return -1, -1
 	}
-	//	how to take an element and sum it with all the others?
-	//	Check if sum equals to 2020
-    m := make(map[int]int)
-    for i, v := range expenses {
-		m[i] = v
-		fmt.Println("Map has these keys: ",m[i])
-		fmt.Println(m)
-		// result := target - m[i]
-		// fmt.Println("Result is: ",result)
+	// n = 0 // Where n is the index where the value that we need to sum up is stored
+	// result = xn + x(n+1)
+	//	Take the n0 and sum it up with the values of indices "n" (by iterating over them?)
+	//	Then pass on the n1, and so on.
+	//	Nested loops?
 
-		// if result - target == 0 {
-		// 	m[i] = result
-		// 	fmt.Println(m)
-		// }
-        
-    }
-    return -1, -1
+	for i := 0; i < len(expenses); i++ {
+		result := expenses[0] + expenses[i]
+		fmt.Println("i is :", expenses[0], "next i is: ", expenses[i])
+		fmt.Println("Result is: ", result)
+	}
+
+	return -1, -1
 }
