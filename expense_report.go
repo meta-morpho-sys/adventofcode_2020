@@ -212,16 +212,16 @@ var expensesInput = []int{
 }
 
 func main() {
-	expense := find2020(expensesInput)
-	found := multiplyExpenses(expense)
+	values := findTwoFor2020(expensesInput)
+	found := multiplyExpenses(values)
 	fmt.Println("\nFinal result", found)
 }
 
 // Take a list of expenses and check which two make the sum of 2020
-func find2020(expenses []int) (found[]int) {
-	// if len(expenses) <= 1 {
-	// 	return -1, nil
-	// }
+func findTwoFor2020(expenses []int) (found[]int) {
+	if len(expenses) <= 1 {
+		fmt.Println("The list is empty")
+	}
 	for summandA := 0; summandA < len(expenses); summandA++ {
 		for summandB := 0; summandB < len(expenses); summandB++ {
 			result := expenses[summandA] + expenses[summandB]
