@@ -222,7 +222,7 @@ func findTwoFor2020(expenses []int) (found[]int) {
 	if len(expenses) <= 1 {
 		fmt.Println("The list is empty")
 	}
-	for summandA := 0; summandA < len(expenses); summandA++ {
+	for summandA := range expenses {
 		for summandB := 0; summandB < len(expenses); summandB++ {
 			result := expenses[summandA] + expenses[summandB]
 			found := []int{}
@@ -234,6 +234,18 @@ func findTwoFor2020(expenses []int) (found[]int) {
 			}
 		}
 	}
+	// for summandA := 0; summandA < len(expenses); summandA++ {
+	// 	for summandB := 0; summandB < len(expenses); summandB++ {
+	// 		result := expenses[summandA] + expenses[summandB]
+	// 		found := []int{}
+	// 		if result == 2020 {
+	// 			found = append(found, expenses[summandA], expenses[summandB])
+	// 			fmt.Printf("These values %v sum up to 2020",found)
+	// 			fmt.Printf("\nThere were %v elements in the expense list",len(expenses))
+	// 			return found
+	// 		}
+	// 	}
+	// }
 	return
 }
 
