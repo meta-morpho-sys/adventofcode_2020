@@ -213,7 +213,8 @@ var expensesInput = []int{
 
 func main() {
 	expense := find2020(expensesInput)
-	fmt.Println("\nFinal result", expense)
+	found := multiplyExpenses(expense)
+	fmt.Println("\nFinal result", found)
 }
 
 // Take a list of expenses and check which two make the sum of 2020
@@ -234,4 +235,12 @@ func find2020(expenses []int) (found[]int) {
 		}
 	}
 	return
+}
+
+func multiplyExpenses(found []int) int{
+	result := 0
+	for i := 0; i < len(found); i++ {
+		result = found[0] * found[i]
+	}
+	return result
 }
